@@ -1,0 +1,30 @@
+# 数据库与日志（含个人持仓/信号记录，不上传）
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/logs/
+
+# Claude Code 本地配置（含本机绝对路径）
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+.pytest_cache/
+
+# Node / 前端
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# macOS
+.DS_Store
+
+# 环境变量
+.env
+.env.local
