@@ -3,6 +3,7 @@
 行情数据拉取 + 缓存 — akshare 多数据源回退
 """
 import time
+import os
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
 
@@ -463,6 +464,11 @@ def get_stocks_daily(
         {stock_code: DataFrame}
     """
     import akshare as ak
+    # Disable proxy for stock data (avoid Connection aborted errors)
+    os.environ.pop("HTTP_PROXY", None)
+    os.environ.pop("HTTPS_PROXY", None)
+    os.environ.pop("http_proxy", None)
+    os.environ.pop("https_proxy", None)
     result = {}
     for code in codes:
         # 1. 检查缓存

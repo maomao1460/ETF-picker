@@ -658,5 +658,5 @@ def _compute_vol_info_backtest(amount_cache: dict, date: pd.Timestamp) -> dict:
         short_avg = float(np.mean(hist[-short_w:]))
         long_avg = float(np.mean(hist[-long_w:]))
         ratio = short_avg / long_avg if long_avg > 0 else 1.0
-        result[sector] = {"ratio": round(ratio, 4), "consec_above_13": 3 if ratio >= 1.3 else 0}
+        result[sector] = {"ratio": round(ratio, 4), "consec_above": 3 if ratio >= 1.3 else 0}
     return result

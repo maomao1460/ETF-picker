@@ -245,7 +245,7 @@ def generate_signal(etf_data, benchmark, params, holdings, cash):
             entry["rps_60"] = round(rps_60.get(sector, 0), 1) if rps_60 else None
             if vol_info and sector in vol_info:
                 entry["vol_ratio"] = vol_info[sector]["ratio"]
-                entry["vol_consec_above"] = vol_info[sector]["consec_above_13"]
+                entry["vol_consec_above"] = vol_info[sector]["consec_above"]
             if sector in surge_diffusion:
                 entry["surge_diffusion"] = surge_diffusion[sector]
         rankings.append(entry)
